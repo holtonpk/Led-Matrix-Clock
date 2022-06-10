@@ -51,7 +51,6 @@ class Display:
 
 
         self.offscreen_canvas.SetImage(image1.convert('RGB'), 0)
-        self.offscreen_canvas = self.matrix.SwapOnVSync(self.offscreen_canvas)
 
 
         # time = str(data['hour'])+':'+str(data['minute'])
@@ -65,6 +64,7 @@ class Display:
         # Ttxt = graphics.DrawText(self.offscreen_canvas, self.font, timepos, 18, graphics.Color(color1), str(time))
         # Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2, datepos, 27, graphics.Color(color2), str(date))
         # self.offscreen_canvas = self.matrix.SwapOnVSync(self.offscreen_canvas)
+        self.offscreen_canvas = self.matrix.SwapOnVSync(self.offscreen_canvas)
         
 
 
