@@ -57,7 +57,7 @@ class Display:
         # date = data['date']
 
         # Ttxt = graphics.DrawText(self.offscreen_canvas, self.font, 10, 15, graphics.Color(255, 255, 255), str("3:33"))
-        Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2,  18, 12, graphics.Color(255, 255, 255), str("3/3"))
+        Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2,  18, 13, graphics.Color(255, 255, 255), str("June 10"))
 
 
         # self.offscreen_canvas.Clear()
