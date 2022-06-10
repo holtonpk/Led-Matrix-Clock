@@ -50,14 +50,14 @@ class Display:
         image1.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)
 
 
-        self.offscreen_canvas.SetImage(image1.convert('RGB'), 0)
+        # self.offscreen_canvas.SetImage(image1.convert('RGB'), 0)
 
 
         # time = str(data['hour'])+':'+str(data['minute'])
         # date = data['date']
 
         Ttxt = graphics.DrawText(self.offscreen_canvas, self.font, 10, 15, graphics.Color(255, 255, 255), str("3:33"))
-        Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2, 10, 27, graphics.Color(0, 0, 2), str("3/3"))
+        Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2, 10, 27, graphics.Color(255, 255, 255), str("3/3"))
         # self.offscreen_canvas.Clear()
         # timepos = 32 - (Ttxt / 2)
         # datepos = 32 - (Dtxt / 2)
