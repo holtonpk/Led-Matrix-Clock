@@ -56,7 +56,8 @@ class Display:
         Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2,  14, 13, graphics.Color(255, 255, 255), str("JUN 10"))
 
 
-        dateWidth = image1.width + 2 + Dtxt 
+        dateWidth = 32 -  (image1.width + 2 + Dtxt) / 2()
+
 
         print(dateWidth)
 
@@ -65,7 +66,7 @@ class Display:
         # date = data['date']
 
         # Ttxt = graphics.DrawText(self.offscreen_canvas, self.font, 10, 15, graphics.Color(255, 255, 255), str("3:33"))
-        Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2,  14, 13, graphics.Color(255, 255, 255), str("JUN 10"))
+        Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2,  dateWidth, 13, graphics.Color(255, 255, 255), str("L"))
 
 
         # self.offscreen_canvas.Clear()
