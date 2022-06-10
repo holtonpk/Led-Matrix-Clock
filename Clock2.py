@@ -46,7 +46,7 @@ class Display:
         color3 = randint(0,255)
 
 
-        image1 = Image.open("/home/pi/Token_icons/eth.png")
+        image1 = Image.open("../grad.png")
         image1.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)
 
 
