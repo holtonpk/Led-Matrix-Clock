@@ -35,8 +35,8 @@ class Display:
         self.prevtime = 0
         self.font = graphics.Font()
         self.font2 = graphics.Font(1)
-        self.font.LoadFont("./fonts/6x13O.bdf")
-        self.font2.LoadFont("./fonts/7x13O.bdf")
+        self.font.LoadFont("./fonts/6x13.bdf")
+        self.font2.LoadFont("./fonts/7x13.bdf")
     
 
 
