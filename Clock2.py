@@ -53,7 +53,12 @@ class Display:
 
         calIcon = self.offscreen_canvas.SetImage(image1.convert('RGB'), 2, 2)
 
-        print(image1.width)
+        Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2,  14, 13, graphics.Color(255, 255, 255), str("JUN 10"))
+
+
+        dateWidth = image1.width + 2 + Dtxt 
+
+        print(dateWidth)
 
 
         # time = str(data['hour'])+':'+str(data['minute'])
