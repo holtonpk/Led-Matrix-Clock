@@ -50,7 +50,7 @@ class Display:
         image1.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)
 
 
-        self.offscreen_canvas.SetImage(image1.convert('RGB'), 0)
+        self.offscreen_canvas.SetImage(image1.convert('RGB'), 4, 4)
 
 
         # time = str(data['hour'])+':'+str(data['minute'])
