@@ -50,14 +50,14 @@ class Display:
         image1.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)
 
 
-        calIcon = self.offscreen_canvas.SetImage(image1.convert('RGB'), 2, 4)
+        calIcon = self.offscreen_canvas.SetImage(image1.convert('RGB'), 2, 2)
 
 
         # time = str(data['hour'])+':'+str(data['minute'])
         # date = data['date']
 
         # Ttxt = graphics.DrawText(self.offscreen_canvas, self.font, 10, 15, graphics.Color(255, 255, 255), str("3:33"))
-        Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2,  14, 15, graphics.Color(255, 255, 255), str("June 10"))
+        Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2,  14, 13, graphics.Color(255, 255, 255), str("June 10"))
 
 
         # self.offscreen_canvas.Clear()
