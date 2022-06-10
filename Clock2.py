@@ -1,3 +1,4 @@
+from operator import iconcat
 import time
 from datetime import datetime
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
@@ -36,7 +37,7 @@ class Display:
         self.font = graphics.Font()
         self.font2 = graphics.Font(1)
         self.font.LoadFont("./fonts/6x13B.bdf")
-        self.font2.LoadFont("./fonts/6x13B.bdf")
+        self.font2.LoadFont("./fonts/7x13B.bdf")
     
 
 
@@ -51,6 +52,8 @@ class Display:
 
 
         calIcon = self.offscreen_canvas.SetImage(image1.convert('RGB'), 2, 2)
+
+        print(calIcon)
 
 
         # time = str(data['hour'])+':'+str(data['minute'])
