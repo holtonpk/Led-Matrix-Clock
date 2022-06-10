@@ -53,7 +53,7 @@ class Display:
 
         calIcon = self.offscreen_canvas.SetImage(image1.convert('RGB'), 2, 2)
 
-        print(calIcon)
+        print(self.matrix.width)
 
 
         # time = str(data['hour'])+':'+str(data['minute'])
