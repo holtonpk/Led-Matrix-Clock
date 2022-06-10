@@ -56,7 +56,7 @@ class Display:
         Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2,  14, 13, graphics.Color(255, 255, 255), str("JUN 10"))
 
 
-        dateWidth = 32 -  (image1.width + 2 + Dtxt) / 2()
+        dateWidth = 32 - ( (image1.width + 2 + Dtxt) / 2)
 
 
         print(dateWidth)
