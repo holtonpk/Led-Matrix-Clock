@@ -46,11 +46,11 @@ class Display:
         color3 = randint(0,255)
 
 
-        image1 = Image.open("/home/pi/Token_icons/btc.png")
+        image1 = Image.open("/home/pi/Token_icons/eth.png")
         image1.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)
 
 
-        self.offscreen_canvas.SetImage(image1.convert('RGB'), 32)
+        self.offscreen_canvas.SetImage(image1.convert('RGB'), 0)
         self.offscreen_canvas = self.matrix.SwapOnVSync(self.offscreen_canvas)
 
 
@@ -78,5 +78,4 @@ if __name__ == "__main__":
         #     time = current_time
     d.display({"hour":"3", "minute":'33', "date":'3/3'})
     input("stop")
-
 
