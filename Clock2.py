@@ -36,8 +36,10 @@ class Display:
         self.prevtime = 0
         self.timeFont = graphics.Font()
         self.dateFont = graphics.Font(1)
+        self.tempFont = graphics.Font(2)
         self.timeFont.LoadFont("./fonts/9x18B.bdf")
         self.dateFont.LoadFont("./fonts/6x13B.bdf")
+        self.tempFont.LoadFont("./fonts/7x13B.bdf")
     
 
 
@@ -53,7 +55,7 @@ class Display:
 
 
     def displayTemp(self, temp):
-        graphics.DrawText(self.offscreen_canvas, self.timeFont, self.clockText+2, 26, graphics.Color(255, 255, 255), temp)
+        graphics.DrawText(self.offscreen_canvas, self.tempFont, self.clockText+2, 26, graphics.Color(255, 255, 255), temp)
 
 
 
