@@ -11,7 +11,7 @@ from PIL import Image
 class Time:
     def get_time(self):
        
-        date = datetime.now().strftime("%b %d")
+        date = datetime.now().strftime("%a, %b %d")
         minute = datetime.now().minute
         if int(minute) < 10:
             minute = "0"+str(minute)
