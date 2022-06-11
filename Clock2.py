@@ -25,7 +25,7 @@ class Time:
 class Weather:
     def get_temp(self):
         response = requests.get('http://api.weatherapi.com/v1/current.json?key=1edec8319ff140bd898231802221106 &q=80126&aqi=no')
-        return response.json()['current']['temp_f']
+        return round(response.json()['current']['temp_f'])
 
         
 class Display:
