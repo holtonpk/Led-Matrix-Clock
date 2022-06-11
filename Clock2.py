@@ -44,13 +44,13 @@ class Display:
     def displayDate(self, date):
         image1 = Image.open("./calendar.png")
         image1.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)
-        Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2,  14, 13, graphics.Color(255, 255, 255), date)
+        Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2,  14, 10, graphics.Color(255, 255, 255), date)
         self.offscreen_canvas = self.matrix.SwapOnVSync(self.offscreen_canvas)
         dateWidth = 32 - ( (image1.width + 4 + Dtxt) / 2)
         print(dateWidth)
         # self.offscreen_canvas.Clear()
         calIcon = self.offscreen_canvas.SetImage(image1.convert('RGB'), dateWidth, 2)
-        Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2,  (dateWidth+image1.width + 4), 13, graphics.Color(255, 255, 255), date)
+        Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2,  (dateWidth+image1.width + 4), 10, graphics.Color(255, 255, 255), date)
         self.offscreen_canvas = self.matrix.SwapOnVSync(self.offscreen_canvas)
         
 
