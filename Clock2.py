@@ -41,47 +41,16 @@ class Display:
     
 
 
-    def display(self, data):
-        color1 = randint(0,255)
-        color2 = randint(0,255)
-        color3 = randint(0,255)
-
-
+    def displayDate(self, date):
         image1 = Image.open("./calendar.png")
         image1.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)
-
-
-
-        Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2,  14, 13, graphics.Color(255, 255, 255), str("JUN 1"))
-
+        Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2,  14, 13, graphics.Color(255, 255, 255), date)
         self.offscreen_canvas = self.matrix.SwapOnVSync(self.offscreen_canvas)
-
         dateWidth = 32 - ( (image1.width + 2 + Dtxt) / 2)
-
-
         print(dateWidth)
-
-
-        # time = str(data['hour'])+':'+str(data['minute'])
-        # date = data['date']
-
-        # Ttxt = graphics.DrawText(self.offscreen_canvas, self.font, 10, 15, graphics.Color(255, 255, 255), str("3:33"))
-
-        self.offscreen_canvas.Clear()
-
-        calIcon = self.offscreen_canvas.SetImage(image1.convert('RGB'), dateWidth, 2)
-        Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2,  (dateWidth+image1.width + 2), 13, graphics.Color(255, 255, 255), str("JUN 1"))
-
-
-
-
-
         # self.offscreen_canvas.Clear()
-        # timepos = 32 - (Ttxt / 2)
-        # datepos = 32 - (Dtxt / 2)
-        # Ttxt = graphics.DrawText(self.offscreen_canvas, self.font, timepos, 18, graphics.Color(color1), str(time))
-        # Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2, datepos, 27, graphics.Color(color2), str(date))
-        # self.offscreen_canvas = self.matrix.SwapOnVSync(self.offscreen_canvas)
+        calIcon = self.offscreen_canvas.SetImage(image1.convert('RGB'), dateWidth, 2)
+        Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2,  (dateWidth+image1.width + 2), 13, graphics.Color(255, 255, 255), date)
         self.offscreen_canvas = self.matrix.SwapOnVSync(self.offscreen_canvas)
         
 
@@ -94,6 +63,6 @@ if __name__ == "__main__":
         # if time != current_time:
         #     d.display(current_time)
         #     time = current_time
-    d.display({"hour":"3", "minute":'33', "date":'3/3'})
+    d.displayDate("Jun 10")
     input("stop")
 
