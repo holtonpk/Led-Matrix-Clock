@@ -80,11 +80,13 @@ if __name__ == "__main__":
         if time != current_time:
             d.displayDate(current_time['date'])
             d.displayTime(current_time)
-            d.config()
             time = current_time
         if weather != current_weather:
             d.displayTemp(str(current_weather)+"°")
             weather = current_weather
+        
+        d.config()
+        
 
 
     input("stop")
