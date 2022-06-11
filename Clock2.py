@@ -73,7 +73,7 @@ class Display:
 if __name__ == "__main__":
     d = Display()
     time = {}
-    weather = Weather().get_weather()
+    weather = Weather().get_temp()
     while True:
         current_time = Time().get_time()
         if time != current_time:
