@@ -39,7 +39,7 @@ class Display:
         self.tempFont = graphics.Font(2)
         self.timeFont.LoadFont("./fonts/9x18B.bdf")
         self.dateFont.LoadFont("./fonts/6x13B.bdf")
-        self.tempFont.LoadFont("./fonts/7x13B.bdf")
+        self.tempFont.LoadFont("./fonts/6x9.bdf")
     
 
 
