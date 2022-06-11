@@ -69,5 +69,6 @@ if __name__ == "__main__":
         #     time = current_time
     d.displayDate("Jun 10")
     d.displayTime("9:00")
+    d.config()
     input("stop")
 
