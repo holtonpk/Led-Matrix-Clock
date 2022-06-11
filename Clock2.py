@@ -5,13 +5,13 @@ from rgbmatrix import RGBMatrix, RGBMatrixOptions
 from rgbmatrix import graphics
 from random import randint
 from PIL import Image
-
+import requests
 
 
 class Time:
     def get_time(self):
        
-        date = datetime.now().strftime("%a, %b %d")
+        date = datetime.now().strftime("%b %d")
         minute = datetime.now().minute
         if int(minute) < 10:
             minute = "0"+str(minute)
@@ -20,6 +20,13 @@ class Time:
             hour -= 12
 
         return {"hour":hour, "minute":minute, "date":date}
+
+
+class Weather:
+    def get_weather(self):
+        response = requests.get('http://api.weatherapi.com/v1/current.json?key=1edec8319ff140bd898231802221106 &q=80126&aqi=no')
+
+        print('weather:',response.content())
 
         
 class Display:
@@ -67,14 +74,15 @@ class Display:
 if __name__ == "__main__":
     d = Display()
     time = {}
-    while True:
-        current_time = Time().get_time()
-        if time != current_time:
-            d.displayDate(current_time['date'])
-            d.displayTime(current_time)
-            d.displayTemp("75°")
-            d.config()
-            time = current_time
+    weather = Weather().get_weather()
+    # while True:
+    #     current_time = Time().get_time()
+    #     if time != current_time:
+    #         d.displayDate(current_time['date'])
+    #         d.displayTime(current_time)
+    #         d.displayTemp("75°")
+    #         d.config()
+    #         time = current_time
 
-    input("stop")
+    # input("stop")
 
