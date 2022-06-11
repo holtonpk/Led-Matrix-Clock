@@ -51,7 +51,7 @@ class Display:
 
 
     def displayTime(self, time):
-       self.clockText =  graphics.DrawText(self.offscreen_canvas, self.timeFont,  2, 26, graphics.Color(255, 255, 255), time)
+       self.clockText =  graphics.DrawText(self.offscreen_canvas, self.timeFont,  1, 28, graphics.Color(255, 255, 255), time)
 
 
     def displayTemp(self, temp):
