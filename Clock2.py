@@ -35,9 +35,9 @@ class Display:
         self.offscreen_canvas = self.matrix.CreateFrameCanvas()
         self.prevtime = 0
         self.font = graphics.Font()
-        self.font2 = graphics.Font(1)
+        self.dateFont = graphics.Font(1)
         self.font.LoadFont("./fonts/6x13B.bdf")
-        self.font2.LoadFont("./fonts/6x13B.bdf")
+        self.dateFont.LoadFont("./fonts/6x13B.bdf")
     
 
 
@@ -45,8 +45,15 @@ class Display:
         image1 = Image.open("./calendar.png")
         image1.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)
         self.offscreen_canvas.SetImage(image1.convert('RGB'), 2, 2)
-        graphics.DrawText(self.offscreen_canvas, self.font2,  (image1.width + 4), 12, graphics.Color(255, 255, 255), date)
+        graphics.DrawText(self.offscreen_canvas, self.date,  (image1.width + 4), 12, graphics.Color(255, 255, 255), date)
         self.offscreen_canvas = self.matrix.SwapOnVSync(self.offscreen_canvas)
+
+
+    def displayTime(self, time):
+        graphics.DrawText(self.offscreen_canvas, self.dateFont,  4, 20, graphics.Color(255, 255, 255), time)
+        self.offscreen_canvas = self.matrix.SwapOnVSync(self.offscreen_canvas)
+
+
         
 
 
@@ -59,5 +66,6 @@ if __name__ == "__main__":
         #     d.display(current_time)
         #     time = current_time
     d.displayDate("Jun 10")
+    d.displayTime("9:00")
     input("stop")
 
