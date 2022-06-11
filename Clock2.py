@@ -37,7 +37,7 @@ class Display:
         self.font = graphics.Font()
         self.font2 = graphics.Font(1)
         self.font.LoadFont("./fonts/6x13B.bdf")
-        self.font2.LoadFont("./fonts/7x13B.bdf")
+        self.font2.LoadFont("./fonts/5x7.bdf")
     
 
 
