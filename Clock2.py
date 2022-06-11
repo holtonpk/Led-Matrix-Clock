@@ -52,7 +52,7 @@ class Display:
 
 
 
-        Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2,  14, 13, graphics.Color(255, 255, 255), str("JUN 10"))
+        Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2,  14, 13, graphics.Color(255, 255, 255), str("JUN 1"))
 
         self.offscreen_canvas = self.matrix.SwapOnVSync(self.offscreen_canvas)
 
