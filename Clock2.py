@@ -53,11 +53,11 @@ class Display:
         image1 = Image.open("./calendar.png")
         image1.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)
         self.offscreen_canvas.SetImage(image1.convert('RGB'), 2, 2)
-        self.dateText =  graphics.DrawText(self.offscreen_canvas, self.dateFont,  (image1.width + 4), 12, graphics.Color(255, 255, 255), date)
+        self.dateText =  graphics.DrawText(self.offscreen_canvas, self.dateFont,  (image1.width + 4), 12, graphics.Color(255, 0, 255), date)
 
 
     def displayTime(self, time):
-       self.clockText =  graphics.DrawText(self.offscreen_canvas, self.timeFont,  1, 28, graphics.Color(255,0,255), str(time['hour'])+":"+str(time['minute']))
+       self.clockText =  graphics.DrawText(self.offscreen_canvas, self.timeFont,  1, 28, graphics.Color(255,255,255), str(time['hour'])+":"+str(time['minute']))
 
 
     def displayTemp(self, temp):
