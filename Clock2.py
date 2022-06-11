@@ -75,24 +75,18 @@ if __name__ == "__main__":
     d = Display()
     time = {}
     weather = {}
-    reset = True
+
     while True:
         current_weather = Weather().get_temp()
         current_time = Time().get_time()
-        if time != current_time:
+        if time != current_time or weather != current_weather:
             d.displayDate(current_time['date'])
             d.displayTime(current_time)
             time = current_time
-            reset = True
-
-        if weather != current_weather:
             d.displayTemp(str(current_weather)+"°")
             weather = current_weather
-            reset = True
-
-        if reset:
             d.config()
-            reset = False
+
 
 
 
