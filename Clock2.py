@@ -45,14 +45,16 @@ class Display:
         image1 = Image.open("./calendar.png")
         image1.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)
         self.offscreen_canvas.SetImage(image1.convert('RGB'), 2, 2)
-        graphics.DrawText(self.offscreen_canvas, self.date,  (image1.width + 4), 12, graphics.Color(255, 255, 255), date)
-        self.offscreen_canvas = self.matrix.SwapOnVSync(self.offscreen_canvas)
+        graphics.DrawText(self.offscreen_canvas, self.dateFont,  (image1.width + 4), 12, graphics.Color(255, 255, 255), date)
 
 
     def displayTime(self, time):
         graphics.DrawText(self.offscreen_canvas, self.dateFont,  4, 20, graphics.Color(255, 255, 255), time)
-        self.offscreen_canvas = self.matrix.SwapOnVSync(self.offscreen_canvas)
 
+
+
+    def config(self):
+        self.offscreen_canvas = self.matrix.SwapOnVSync(self.offscreen_canvas)
 
         
 
