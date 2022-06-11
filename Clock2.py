@@ -70,7 +70,7 @@ class Display:
         self.offscreen_canvas.Clear()
 
         calIcon = self.offscreen_canvas.SetImage(image1.convert('RGB'), dateWidth, 2)
-        Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2,  (dateWidth+image1.width + 2), 13, graphics.Color(255, 255, 255), str("JUN 10"))
+        Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2,  (dateWidth+image1.width + 2), 13, graphics.Color(255, 255, 255), str("JUN 1"))
 
 
 
