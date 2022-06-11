@@ -61,8 +61,11 @@ class Display:
 
 
     def displayTemp(self, temp):
-        graphics.DrawText(self.offscreen_canvas, self.tempFont, self.clockText+9, 30, graphics.Color(255, 255, 255), temp)
+        graphics.DrawText(self.offscreen_canvas, self.tempFont, self.clockText+9, 30, graphics.Color(255,255,0), temp)
 
+
+    def clear(self):
+            self.offscreen_canvas.Clear()
 
 
     def config(self):
@@ -80,6 +83,7 @@ if __name__ == "__main__":
         current_weather = Weather().get_temp()
         current_time = Time().get_time()
         if time != current_time or weather != current_weather:
+            d.clear()
             d.displayDate(current_time['date'])
             d.displayTime(current_time)
             time = current_time
