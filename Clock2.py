@@ -10,9 +10,8 @@ from PIL import Image
 
 class Time:
     def get_time(self):
-        month = datetime.now().date().month
-        day = datetime.now().date().day
-        date = datetime.now().strftime("%b %d, %Y")
+       
+        date = datetime.now().strftime("%b %d")
         minute = datetime.now().minute
         if int(minute) < 10:
             minute = "0"+str(minute)
