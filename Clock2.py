@@ -52,6 +52,10 @@ class Display:
         graphics.DrawText(self.offscreen_canvas, self.timeFont,  2, 26, graphics.Color(255, 255, 255), time)
 
 
+    def displayTemp(self, temp):
+        graphics.DrawText(self.offscreen_canvas, self.timeFont,  2, 26, graphics.Color(255, 255, 255), temp)
+
+
 
     def config(self):
         self.offscreen_canvas = self.matrix.SwapOnVSync(self.offscreen_canvas)
@@ -69,6 +73,7 @@ if __name__ == "__main__":
         #     time = current_time
     d.displayDate("Jun 10")
     d.displayTime("9:00")
+    d.displayTemp("75°")
     d.config()
     input("stop")
 
