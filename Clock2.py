@@ -23,10 +23,9 @@ class Time:
 
 
 class Weather:
-    def get_weather(self):
+    def get_temp(self):
         response = requests.get('http://api.weatherapi.com/v1/current.json?key=1edec8319ff140bd898231802221106 &q=80126&aqi=no')
-
-        print('weather:',response.content())
+        return response.json()['current']['temp_f']
 
         
 class Display:
@@ -75,14 +74,14 @@ if __name__ == "__main__":
     d = Display()
     time = {}
     weather = Weather().get_weather()
-    # while True:
-    #     current_time = Time().get_time()
-    #     if time != current_time:
-    #         d.displayDate(current_time['date'])
-    #         d.displayTime(current_time)
-    #         d.displayTemp("75°")
-    #         d.config()
-    #         time = current_time
+    while True:
+        current_time = Time().get_time()
+        if time != current_time:
+            d.displayDate(current_time['date'])
+            d.displayTime(current_time)
+            d.displayTemp(str(weather)+"°")
+            d.config()
+            time = current_time
 
-    # input("stop")
+    input("stop")
 
