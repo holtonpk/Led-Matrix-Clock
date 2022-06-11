@@ -51,11 +51,11 @@ class Display:
 
 
     def displayTime(self, time):
-       self.clockText =  graphics.DrawText(self.offscreen_canvas, self.timeFont,  1, 28, graphics.Color(255, 255, 255), time)
+       self.clockText =  graphics.DrawText(self.offscreen_canvas, self.timeFont,  1, 28, graphics.Color(255, 255, 255), time['hour']+":"+time['minute'])
 
 
     def displayTemp(self, temp):
-        graphics.DrawText(self.offscreen_canvas, self.tempFont, self.clockText+6, 30, graphics.Color(255, 255, 255), temp)
+        graphics.DrawText(self.offscreen_canvas, self.tempFont, self.clockText+9, 30, graphics.Color(255, 255, 255), temp)
 
 
 
@@ -74,7 +74,7 @@ if __name__ == "__main__":
         #     d.display(current_time)
         #     time = current_time
     d.displayDate("Jun 10")
-    d.displayTime("9:00")
+    d.displayTime(Time().get_time())
     d.displayTemp("75°")
     d.config()
     input("stop")
