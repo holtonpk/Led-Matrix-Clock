@@ -45,15 +45,15 @@ class Display:
         image1 = Image.open("./calendar.png")
         image1.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)
         self.offscreen_canvas.SetImage(image1.convert('RGB'), 2, 2)
-        graphics.DrawText(self.offscreen_canvas, self.dateFont,  (image1.width + 4), 12, graphics.Color(255, 255, 255), date)
+        self.dateText =  graphics.DrawText(self.offscreen_canvas, self.dateFont,  (image1.width + 4), 12, graphics.Color(255, 255, 255), date)
 
 
     def displayTime(self, time):
-        graphics.DrawText(self.offscreen_canvas, self.timeFont,  2, 26, graphics.Color(255, 255, 255), time)
+       self.clockText =  graphics.DrawText(self.offscreen_canvas, self.timeFont,  2, 26, graphics.Color(255, 255, 255), time)
 
 
     def displayTemp(self, temp):
-        graphics.DrawText(self.offscreen_canvas, self.timeFont,  2, 26, graphics.Color(255, 255, 255), temp)
+        graphics.DrawText(self.offscreen_canvas, self.timeFont, self.clockText+2, 26, graphics.Color(255, 255, 255), temp)
 
 
 
