@@ -49,7 +49,7 @@ class Display:
 
 
     def displayTime(self, time):
-        graphics.DrawText(self.offscreen_canvas, self.dateFont,  4, 20, graphics.Color(255, 255, 255), time)
+        graphics.DrawText(self.offscreen_canvas, self.dateFont,  4, 26, graphics.Color(255, 255, 255), time)
 
 
 
