@@ -34,9 +34,9 @@ class Display:
         self.matrix = RGBMatrix(options=options)
         self.offscreen_canvas = self.matrix.CreateFrameCanvas()
         self.prevtime = 0
-        self.font = graphics.Font()
+        self.timeFont = graphics.Font()
         self.dateFont = graphics.Font(1)
-        self.font.LoadFont("./fonts/6x13B.bdf")
+        self.timeFont.LoadFont("./fonts/9x15B.bdf")
         self.dateFont.LoadFont("./fonts/6x13B.bdf")
     
 
@@ -49,7 +49,7 @@ class Display:
 
 
     def displayTime(self, time):
-        graphics.DrawText(self.offscreen_canvas, self.dateFont,  4, 26, graphics.Color(255, 255, 255), time)
+        graphics.DrawText(self.offscreen_canvas, self.timeFont,  4, 26, graphics.Color(255, 255, 255), time)
 
 
 
