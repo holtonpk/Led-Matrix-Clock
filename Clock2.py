@@ -49,8 +49,8 @@ class Display:
         dateWidth = 32 - ( (image1.width + 4 + Dtxt) / 2)
         print(dateWidth)
         # self.offscreen_canvas.Clear()
-        calIcon = self.offscreen_canvas.SetImage(image1.convert('RGB'), dateWidth, 2)
-        Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2,  (dateWidth+image1.width + 4), 11, graphics.Color(255, 255, 255), date)
+        calIcon = self.offscreen_canvas.SetImage(image1.convert('RGB'), 2, 2)
+        Dtxt = graphics.DrawText(self.offscreen_canvas, self.font2,  (image1.width + 4), 11, graphics.Color(255, 255, 255), date)
         self.offscreen_canvas = self.matrix.SwapOnVSync(self.offscreen_canvas)
         
 
