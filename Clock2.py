@@ -12,7 +12,7 @@ class Time:
     def get_time(self):
         month = datetime.now().date().month
         day = datetime.now().date().day
-        date = str(month) + '/' + str(day)
+        date = datetime.now().strftime("%b %d, %Y")
         minute = datetime.now().minute
         if int(minute) < 10:
             minute = "0"+str(minute)
@@ -73,7 +73,7 @@ if __name__ == "__main__":
         # if time != current_time:
         #     d.display(current_time)
         #     time = current_time
-    d.displayDate("Jun 10")
+    d.displayDate(Time().get_time()['date'])
     d.displayTime(Time().get_time())
     d.displayTemp("75°")
     d.config()
