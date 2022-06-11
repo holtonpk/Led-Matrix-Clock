@@ -67,14 +67,14 @@ class Display:
 if __name__ == "__main__":
     d = Display()
     time = {}
-    # while True:
-        # current_time = Time().get_time()
-        # if time != current_time:
-        #     d.display(current_time)
-        #     time = current_time
-    d.displayDate(Time().get_time()['date'])
-    d.displayTime(Time().get_time())
-    d.displayTemp("75°")
-    d.config()
+    while True:
+        current_time = Time().get_time()
+        if time != current_time:
+            d.displayDate(current_time['date'])
+            d.displayTime(current_time)
+            d.displayTemp("75°")
+            d.config()
+            time = current_time
+
     input("stop")
 
