@@ -67,9 +67,10 @@ class Display:
 
         image2 = Image.open('./weather/64x64/day/113.png')
         image2.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)  
+        self.offscreen_canvas.SetImage(image2.convert('RGB'), 2, 2)
 
 
-        graphics.DrawText(self.offscreen_canvas, self.tempFont, self.clockText+9, 30, graphics.Color(255,255,0), str(round(weather['current']['temp_f']))+"°")
+        # graphics.DrawText(self.offscreen_canvas, self.tempFont, self.clockText+9, 30, graphics.Color(255,255,0), str(round(weather['current']['temp_f']))+"°")
 
 
     def clear(self):
@@ -92,8 +93,8 @@ if __name__ == "__main__":
         current_time = Time().get_time()
         if time != current_time or weather != current_weather:
             d.clear()
-            d.displayDate(current_time['date'])
-            d.displayTime(current_time)
+            # d.displayDate(current_time['date'])
+            # d.displayTime(current_time)
             time = current_time
             d.displayTemp(current_weather)
             weather = current_weather
