@@ -62,15 +62,14 @@ class Display:
 
     def displayTemp(self, weather):
 
-        img = (str(weather['current']['condition']['icon']).rsplit("64x64")[1])
-        print(img)
-        imgpath = './weather/64x64'
+       
+        imgpath = './weather/64x64'+(str(weather['current']['condition']['icon']).rsplit("64x64")[1])
 
         image2 = Image.open(imgpath)
         image2.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)  
 
 
-        graphics.DrawText(self.offscreen_canvas, self.tempFont, self.clockText+9, 30, graphics.Color(255,255,0), round(weather['current']['temp_f']))
+        graphics.DrawText(self.offscreen_canvas, self.tempFont, self.clockText+9, 30, graphics.Color(255,255,0), str(round(weather['current']['temp_f']))+"°")
 
 
     def clear(self):
@@ -96,7 +95,7 @@ if __name__ == "__main__":
             d.displayDate(current_time['date'])
             d.displayTime(current_time)
             time = current_time
-            d.displayTemp(str(current_weather)+"°")
+            d.displayTemp(current_weather)
             weather = current_weather
             d.config()
 
