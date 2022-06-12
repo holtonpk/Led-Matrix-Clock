@@ -7,7 +7,7 @@ from rgbmatrix import graphics
 from random import randint
 from PIL import Image
 import requests
-
+import os
 
 class Time:
     def get_time(self):
@@ -60,10 +60,11 @@ class Display:
        self.clockText =  graphics.DrawText(self.offscreen_canvas, self.timeFont,  1, 28, graphics.Color(255,255,255), str(time['hour'])+":"+str(time['minute']))
 
 
-    def displayTemp(self, weather):
+    def displayTemp(self, weather, img):
 
        
-        imgpath = './weather/64x64'+(str(weather['current']['condition']['icon']).rsplit("64x64")[1])
+        # imgpath = './weather/64x64'+(str(weather['current']['condition']['icon']).rsplit("64x64")[1])
+        imgpath= "./weather/64x64/day/"+img
 
         image2 = Image.open(imgpath)
         image2.thumbnail((30, 30), Image.ANTIALIAS) 
@@ -93,20 +94,30 @@ if __name__ == "__main__":
     while True:
         current_weather = Weather().get_temp()
         current_time = Time().get_time()
-        if time != current_time or weather != current_weather:
-            d.clear()
+        # if time != current_time or weather != current_weather:
+        #     d.clear()
+        #     d.displayDate(current_time['date'])
+        #     d.displayTime(current_time)
+        #     time = current_time
+        #     d.displayTemp(current_weather)
+        #     weather = current_weather
+        #     d.config()
+
+        for img in os.listdir('./weather/64x64/day'):
+                
+
             d.displayDate(current_time['date'])
             d.displayTime(current_time)
             time = current_time
-            d.displayTemp(current_weather)
+            d.displayTemp(current_weather, img)
             weather = current_weather
             d.config()
+            input('next')
 
 
 
 
 
-        
         
 
 
