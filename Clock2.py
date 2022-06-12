@@ -26,7 +26,7 @@ class Time:
 class Weather:
     def get_temp(self):
         response = requests.get('http://api.weatherapi.com/v1/current.json?key=1edec8319ff140bd898231802221106 &q=80126&aqi=no')
-        return round(response.json()['current']['temp_f'])
+        return response.json()
 
         
 class Display:
@@ -60,8 +60,14 @@ class Display:
        self.clockText =  graphics.DrawText(self.offscreen_canvas, self.timeFont,  1, 28, graphics.Color(255,255,255), str(time['hour'])+":"+str(time['minute']))
 
 
-    def displayTemp(self, temp):
-        graphics.DrawText(self.offscreen_canvas, self.tempFont, self.clockText+9, 30, graphics.Color(255,255,0), temp)
+    def displayTemp(self, weather):
+
+
+        image2 = Image.open('./weather/64x64'+str(weather['current']['condition']['icon']).rsplit("64x64")[1])
+        image2.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)  
+
+
+        graphics.DrawText(self.offscreen_canvas, self.tempFont, self.clockText+9, 30, graphics.Color(255,255,0), round(weather['current']['temp_f']))
 
 
     def clear(self):
