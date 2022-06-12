@@ -65,7 +65,7 @@ class Display:
        
         imgpath = './weather/64x64'+(str(weather['current']['condition']['icon']).rsplit("64x64")[1])
 
-        image2 = Image.open(imgpath)
+        image2 = Image.open('./weather/64x64/day/113.png')
         image2.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)  
 
 
