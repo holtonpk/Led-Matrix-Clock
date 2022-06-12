@@ -67,10 +67,10 @@ class Display:
         imgpath= "./weather/64x64/day/"+img
 
         image2 = Image.open(imgpath)
-        image2.thumbnail((30, 30), Image.ANTIALIAS) 
+        image2.thumbnail((40, 30), Image.ANTIALIAS) 
 
 
-        self.offscreen_canvas.SetImage(image2.convert('RGB'), 40, 8)
+        self.offscreen_canvas.SetImage(image2.convert('RGB'), 30, 0)
 
 
         graphics.DrawText(self.offscreen_canvas, self.tempFont, self.clockText+13, 30, graphics.Color(0, 0, 0), str(round(weather['current']['temp_f']))+"°")
@@ -106,9 +106,9 @@ if __name__ == "__main__":
         for img in os.listdir('./weather/64x64/day'):
                 
 
-            d.displayDate(current_time['date'])
-            d.displayTime(current_time)
-            time = current_time
+            # d.displayDate(current_time['date'])
+            # d.displayTime(current_time)
+            # time = current_time
             d.displayTemp(current_weather, img)
             weather = current_weather
             d.config()
