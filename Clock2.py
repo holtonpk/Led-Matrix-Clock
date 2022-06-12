@@ -66,10 +66,10 @@ class Display:
         imgpath = './weather/64x64'+(str(weather['current']['condition']['icon']).rsplit("64x64")[1])
 
         image2 = Image.open(imgpath)
-        image2.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS) 
+        image2.thumbnail((30, 30), Image.ANTIALIAS) 
         print(self.matrix.width, self.matrix.height)
 
-        self.offscreen_canvas.SetImage(image2.convert('RGB'), 50, 20)
+        self.offscreen_canvas.SetImage(image2.convert('RGB'), 30, 10)
 
 
         # graphics.DrawText(self.offscreen_canvas, self.tempFont, self.clockText+9, 30, graphics.Color(255,255,0), str(round(weather['current']['temp_f']))+"°")
