@@ -62,9 +62,11 @@ class Display:
 
     def displayTemp(self, weather):
 
-        img = './weather/64x64'+ (str(weather['current']['condition']['icon']).rsplit("64x64")[1])
+        img = (str(weather['current']['condition']['icon']).rsplit("64x64")[1])
+        print(img)
+        imgpath = './weather/64x64'
 
-        image2 = Image.open(img)
+        image2 = Image.open(imgpath)
         image2.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)  
 
 
