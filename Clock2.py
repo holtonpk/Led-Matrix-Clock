@@ -60,13 +60,13 @@ class Display:
        self.clockText =  graphics.DrawText(self.offscreen_canvas, self.timeFont,  1, 28, graphics.Color(255,255,255), str(time['hour'])+":"+str(time['minute']))
 
 
-    def displayTemp(self, weather, img):
+    def displayTemp(self, weather):
 
        
-        imgpath = './weather/64x64'+(str(weather['current']['condition']['icon']).rsplit("64x64")[1])
+        imgPath = './weather/64x64'+(str(weather['current']['condition']['icon']).rsplit("64x64")[1])
 
 
-        image2 = Image.open(imgpath)
+        image2 = Image.open(imgPath)
         image2.thumbnail((40, 30), Image.ANTIALIAS) 
 
 
