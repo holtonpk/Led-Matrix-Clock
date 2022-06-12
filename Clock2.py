@@ -63,17 +63,17 @@ class Display:
     def displayTemp(self, weather, img):
 
        
-        # imgpath = './weather/64x64'+(str(weather['current']['condition']['icon']).rsplit("64x64")[1])
-        imgpath= "./weather/64x64/night/"+img
+        imgpath = './weather/64x64'+(str(weather['current']['condition']['icon']).rsplit("64x64")[1])
+
 
         image2 = Image.open(imgpath)
         image2.thumbnail((40, 30), Image.ANTIALIAS) 
 
 
-        self.offscreen_canvas.SetImage(image2.convert('RGB'), 30, 0)
+        self.offscreen_canvas.SetImage(image2.convert('RGB'), 30, 8)
 
 
-        # graphics.DrawText(self.offscreen_canvas, self.tempFont, self.clockText+13, 30, graphics.Color(0, 0, 0), str(round(weather['current']['temp_f']))+"°")
+        graphics.DrawText(self.offscreen_canvas, self.tempFont, self.clockText+13, 30, graphics.Color(0, 0, 0), str(round(weather['current']['temp_f']))+"°")
 
 
     def clear(self):
@@ -94,27 +94,16 @@ if __name__ == "__main__":
     while True:
         current_weather = Weather().get_temp()
         current_time = Time().get_time()
-        # if time != current_time or weather != current_weather:
-        #     d.clear()
-        #     d.displayDate(current_time['date'])
-        #     d.displayTime(current_time)
-        #     time = current_time
-        #     d.displayTemp(current_weather)
-        #     weather = current_weather
-        #     d.config()
-
-        for img in os.listdir('./weather/64x64/day'):
-                
-
-            # d.displayDate(current_time['date'])
-            # d.displayTime(current_time)
-            # time = current_time
-            d.displayTemp(current_weather, img)
+        if time != current_time or weather != current_weather:
+            d.clear()
+            d.displayDate(current_time['date'])
+            d.displayTime(current_time)
+            time = current_time
+            d.displayTemp(current_weather)
             weather = current_weather
             d.config()
-            input('next')
-            d.clear()
 
+      
 
 
 
