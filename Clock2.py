@@ -69,10 +69,10 @@ class Display:
         image2.thumbnail((30, 30), Image.ANTIALIAS) 
         print(self.matrix.width, self.matrix.height)
 
-        self.offscreen_canvas.SetImage(image2.convert('RGB'), 34, 10)
+        self.offscreen_canvas.SetImage(image2.convert('RGB'), 40, 10)
 
 
-        graphics.DrawText(self.offscreen_canvas, self.tempFont, self.clockText+9, 30, graphics.Color(255,255,0), str(round(weather['current']['temp_f']))+"°")
+        graphics.DrawText(self.offscreen_canvas, self.tempFont, self.clockText+9, 30, graphics.Color(0,0,0), str(round(weather['current']['temp_f']))+"°")
 
 
     def clear(self):
