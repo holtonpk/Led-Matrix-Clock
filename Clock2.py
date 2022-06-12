@@ -45,7 +45,7 @@ class Display:
         self.tempFont = graphics.Font(2)
         self.timeFont.LoadFont("./fonts/9x18B.bdf")
         self.dateFont.LoadFont("./fonts/7x13B.bdf")
-        self.tempFont.LoadFont("./fonts/6x9.bdf")
+        self.tempFont.LoadFont("./fonts/5x8.bdf")
     
 
 
@@ -72,7 +72,7 @@ class Display:
         self.offscreen_canvas.SetImage(image2.convert('RGB'), 40, 10)
 
 
-        graphics.DrawText(self.offscreen_canvas, self.tempFont, self.clockText+9, 30, graphics.Color(0,0,0), str(round(weather['current']['temp_f']))+"°")
+        graphics.DrawText(self.offscreen_canvas, self.tempFont, self.clockText+10, 30, graphics.Color(0,0,0), str(round(weather['current']['temp_f']))+"°")
 
 
     def clear(self):
