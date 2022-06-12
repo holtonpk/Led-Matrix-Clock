@@ -113,6 +113,8 @@ if __name__ == "__main__":
             weather = current_weather
             d.config()
             input('next')
+            d.clear()
+
 
 
 
