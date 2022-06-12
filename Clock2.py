@@ -70,7 +70,7 @@ class Display:
         image2.thumbnail((30, 30), Image.ANTIALIAS) 
 
 
-        self.offscreen_canvas.SetImage(image2.convert('RGB'), 40, 13)
+        self.offscreen_canvas.SetImage(image2.convert('RGB'), 40, 8)
 
 
         graphics.DrawText(self.offscreen_canvas, self.tempFont, self.clockText+13, 30, graphics.Color(0, 0, 0), str(round(weather['current']['temp_f']))+"°")
