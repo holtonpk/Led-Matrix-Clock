@@ -64,7 +64,7 @@ class Display:
 
        
         # imgpath = './weather/64x64'+(str(weather['current']['condition']['icon']).rsplit("64x64")[1])
-        imgpath= "./weather/64x64/day/"+img
+        imgpath= "./weather/64x64/night/"+img
 
         image2 = Image.open(imgpath)
         image2.thumbnail((40, 30), Image.ANTIALIAS) 
