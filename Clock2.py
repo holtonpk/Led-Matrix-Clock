@@ -72,7 +72,7 @@ class Display:
         self.offscreen_canvas.SetImage(image2.convert('RGB'), 40, 10)
 
 
-        graphics.DrawText(self.offscreen_canvas, self.tempFont, self.clockText+10, 30, graphics.Color(0,0,0), str(round(weather['current']['temp_f']))+"°")
+        graphics.DrawText(self.offscreen_canvas, self.tempFont, self.clockText+6, 30, graphics.Color(0,0,0), str(round(weather['current']['temp_f']))+"°")
 
 
     def clear(self):
