@@ -69,7 +69,7 @@ class Display:
         image2.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS) 
 
 
-        self.offscreen_canvas.SetImage(image2.convert('RGB'), 64-self.matrix.width, 32-self.matrix.height)
+        self.offscreen_canvas.SetImage(image2.convert('RGB'), 50, 20)
 
 
         # graphics.DrawText(self.offscreen_canvas, self.tempFont, self.clockText+9, 30, graphics.Color(255,255,0), str(round(weather['current']['temp_f']))+"°")
