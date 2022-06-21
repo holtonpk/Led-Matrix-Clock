@@ -34,6 +34,7 @@ class Display:
         options = RGBMatrixOptions()
         options.rows = 32
         options.cols = 64
+        options.brightness = 50
         options.chain_length = 1
         options.parallel = 1
         options.hardware_mapping = 'adafruit-hat'
@@ -84,7 +85,7 @@ class Display:
         self.offscreen_canvas = self.matrix.SwapOnVSync(self.offscreen_canvas)
 
         
-
+ 
 
 if __name__ == "__main__":
     d = Display()
