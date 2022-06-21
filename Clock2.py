@@ -35,7 +35,7 @@ class Display:
         options.rows = 32
         options.cols = 64
         options.brightness = 30
-        options.mapper = "Rotate:90"
+        options.pixel_mapper = "Rotate:90"
         options.chain_length = 1
         options.parallel = 1
         options.hardware_mapping = 'adafruit-hat'
