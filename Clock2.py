@@ -35,10 +35,10 @@ class Display:
         options.rows = 32
         options.cols = 64
         options.brightness = 30
-        options.pixelmapper="Rotate:90"
+
         options.chain_length = 1
         options.parallel = 1
-        options.hardware_mapping = 'adafruit-hat'
+        options.hardware_mapping = 'adafruit-hat;Rotate:90'
         self.matrix = RGBMatrix(options=options)
         self.offscreen_canvas = self.matrix.CreateFrameCanvas()
         self.prevtime = 0
